@@ -56,8 +56,11 @@ Returns
 ## Wireframes
 
 ![Wireframe](https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame_dsepce.png)
+
 This is the home screen where the user will search for the food and add it to the taily consumed.
+
 ![Wireframe](https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame2_thiq9p.png)
+
 This is the begining of the calculator. This will include below input fields for the user to put age, gender, and current weight.
 
 ### MVP/PostMVP - 5min
