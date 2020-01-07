@@ -17,12 +17,51 @@ body {
 #search {
     display: flex;
     flex-direction: column;
-    align-items: space-around;
+    align-items: flex-start;
     border-radius: 8px;
     background-color: white;
     height: fit-content;
     width: 506px;
     border: 6px gray solid;
+    padding: 0;
+}
+#today {
+    display: flex;
+    flex-direction: column;
+    width: 506px;
+    height: 506px;
+    background-color: white;
+}
+#counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+    height: 400px;
+    width: 700px;
+    background-color: white;
+    margin-top: 100px;
+}
+#calCount, #carbCount, #fatCount, #proCount {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 690px;
+    text-align: right;
+    margin: 5px auto;
+    background-color: gray;
+}
+#calPercent, #carbPercent, #fatPercent, #proPercent {
+    text-align: right;
+    height: 40px;
+    width: 60%;
+    background-color: red;
+}
+#calMarker {
+    margin: 10px 0;
+}
+#calGoal {
+    margin: 10px 0;
 }
 #example {
     display: flex;

@@ -108,12 +108,12 @@ Include a full list of features that have been prioritized based on the `Time an
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic Structure | H | 3hrs| 1hrs | 1hrs |
+| Basic Structure | H | 3hrs| 2hrs | 2hrs |
 | Search function | H | 3hrs| 1hrs | 1hrs |
 | Append Item and details | H | 4hrs| 9hrs | 9hrs |
-| Create macro displays | M | 4hrs| 0hrs | 0hrs |
+| Create macro displays | M | 4hrs| 2hrs | 2hrs |
 | Create Calculator | M | 5hrs| 0hrs | 0hrs |
-| Implement Local Storage | L | 5hrs| 0hrs | 0hrs |
+| Implement Local Storage | L | 5hrs| <1hrs | <1hrs |
 | Add previous days | L | 3hrs| 0hrs | 0hrs |
 | Complete styling | L | 8hrs| 0hrs | 0hrs |
 | Barcode scanner | L | 8hrs| 0hrs | 0hrs |
