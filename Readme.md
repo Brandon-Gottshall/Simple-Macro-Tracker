@@ -91,7 +91,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 2rd| Proposal | Incomplete
+|Jan 2rd| Proposal | *Complete*
 |Jan 3rd| Functional search and append | Incomplete
 |Jan 5th| Macros graph elements | Incomplete
 |Jan 6th| Macro Goal Calculator | Incomplete
@@ -127,4 +127,56 @@ Include a full list of features that have been prioritized based on the `Time an
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+**1/6/2020** Due to limitations in Nutrinix API. I am going to use an alternative API called Spoonacular. This API will allow me to call objects in a similar way but will include information I need to make my application achieve MVP.
+
+Here is a sample call and response @ the new API.
+```
+https://api.spoonacular.com/food/products/search?query=steak&offset=0&number=2&apiKey=${myKey}
+```	
+
+```
+{
+    "type": "product",
+    "products": [
+        {
+            "id": 55684,
+            "title": "Steak Umm Steaks",
+            "image": "https://spoonacular.com/productImages/55684-312x231.jpg",
+            "imageType": "jpg"
+        },
+        {
+            "id": 20411,
+            "title": "Steak Umm Sliced Steaks",
+            "image": "https://spoonacular.com/productImages/20411-312x231.jpg",
+            "imageType": "jpg"
+        }
+    ],
+    "offset": 0,
+    "number": 2,
+    "totalProducts": 640,
+    "processingTimeMs": 8,
+    "expires": 1578627168667
+}
+```
+
+To grab nutrients we will use
+```
+https://api.spoonacular.com/food/products/55684?apiKey=95164448654e40088ff85aef9c22286c
+```
+
+*This will return a title to apend*
+
+```
+"title": "Steak Umm Steaks"
+```
+
+*and object.nutrition*
+
+```
+"nutrition": {
+        "calories": 100.0,
+        "fat": "9g",
+        "protein": "5g",
+        "carbs": "0g"
+    }
+```

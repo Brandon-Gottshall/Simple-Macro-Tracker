@@ -17,11 +17,11 @@ body {
 #search {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: space-around;
     border-radius: 8px;
     background-color: white;
     height: fit-content;
-    width: 706px;
+    width: 506px;
     border: 6px gray solid;
 }
 #example {
@@ -29,7 +29,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     height: 120px;
-    width: 706px;
+    width: 506px;
 }
 #example:hover, #example:hover div {
     background-color: #cccccc;
@@ -41,37 +41,20 @@ body {
 .right {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    align-items: center;
-    margin: auto 0;
+    align-items: flex-end;
 }
 .left {
     display: flex;
     height: 100%;
-    width: 90px;
-    margin: auto 0;
+    width: 20%;
     overflow: none;
 }
 .left > img{
+    display: flex;
     border-radius: 10px;
     padding: 5px 0;
-    width: 110px;
-    height: 110px;
-}
-#calories > h4 {
-    font-size: 25px;
-    margin: auto 0;
-}
-#calories {
-    border: 5px black solid;
     width: 100px;
-    margin-left: 40px;
-}
-#borderLeft {
-    width: 8px;
-    height: 120%;
-    background-color: black;
-    margin: 0 0 50px 50px;
+    height: 100px;
 }
 #borderRight {
     width: 100%;
