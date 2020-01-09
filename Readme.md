@@ -1,71 +1,44 @@
-# Project Overview
+<h1 align='center'>Simple Macro Tracker</h1>
+<h2 align='center'>Project Overview</h2>
+<p align='center'> Brandon Gottshall </p>
+<br>
 
-## Simple Macro Tracker
-###### Brandon Gottshall
-
-## Project Description
+<h3 align='center'>Project Description</h3>
 
 In this Application, the user will be able to quickly input items they eat during the day. The nutritionix API will pull nutrition facts for the item and create a display to show the user a simmple visual to track their Macros for the day.
 
-## API
+<h3 align='center'>API</h3>
 
 I will be utilizing the nutritionix API to grab nutrition results for the item added.
 
 This is an Example of a search for almonds within the API.
-## API Data Sample
+<h3 align='center'>API Data Sample</h3>
+
 
 ```
-https://api.nutritionix.com/v2/search?q=almonds&limit=10&offset=0
-
-Returns
-
-{
-    "exact": false,
-    "total": 6914,
-    "status": 200,
-    "results": [
-        {
-            "item_name": "Almonds",
-            "brand_name": "Blue Diamond Almonds",
-            "thumbnail": "https://d1r9wva3zcpswd.cloudfront.net/55be65a5314e839c2e85c489.jpeg",
-            "nutrient_name": "Calories",
-            "nutrient_value": 160,
-            "nutrient_uom": "kcal",
-            "serving_qty": 24,
-            "serving_uom": "nuts",
-            "resource_id": "8ONGs6KeK",
-            "nutrients": null
-        },
-        {
-            "item_name": "Almonds",
-            "brand_name": "Blue Diamond Almonds",
-            "thumbnail": "https://d1r9wva3zcpswd.cloudfront.net/58fda38095fcd6154b0a7a8c.jpeg",
-            "nutrient_name": "Calories",
-            "nutrient_value": 170,[]()
-            "nutrient_uom": "kcal",
-            "serving_qty": 28,
-            "serving_uom": "nuts",
-            "resource_id": "zrWgsbDBJ",
-            "nutrients": null
-        },
-    ]
-}
-```
+https://api.spoonacular.com/food/products/search?query=steak&offset=0&number=2&apiKey=${myKey}
+```	
 
 
-## Wireframes
 
-![Wireframe](https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame_dsepce.png)
+<h3 align='center'>Wireframes</h3>
 
-This is the home screen where the user will search for the food and add it to the taily consumed.
+<p align="center">
+  <img src="https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame_dsepce.png">
+</p>
+<p align="center">
+  This is the home screen where the user will search for the food and add it to the total consumed.
+</p>
 
-![Wireframe](https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame2_thiq9p.png)
-
+<p align="center">
+  <img src="https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066513/WireFrame2_thiq9p.png">
+</p>
+<p align="center">
 This is the begining of the calculator. This will include below input fields for the user to put age, gender, and current weight.
+</p>
 
-### MVP/PostMVP - 5min
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+<h3 align='center'>MVP/PostMVP</h3>
 
 #### MVP 
 
@@ -83,7 +56,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Drop down to select serving size.
 - *Super Bonus* Create Barcode Scanner
 
-## Project Schedule
+<h3 align='center'>Project Schedule</h3>
 
 This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
@@ -99,12 +72,12 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Jan 8th| Post-MVP | Partial
 |Jan 9th| Present | Incomplete
 
-## Priority Matrix
+### Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
 ![Priority](https://res.cloudinary.com/dwtzncgxe/image/upload/v1578066444/Priority_koopf1.png)
 
-## Timeframes
+### Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
@@ -120,8 +93,9 @@ Include a full list of features that have been prioritized based on the `Time an
 | Total | H | 43hrs| 40hrs | 40hrs |
 
 
-## Code Snippet
-This function is used to parse
+<h3 align='center'>Code Snippet</h3>
+
+This function is used to parse the user inputs into the goal calculator and turn it into macro tracking goodness.
 
 ```
 const calculate = event => {
@@ -168,7 +142,7 @@ const calculate = event => {
 }
 ```
 
-## Change Log
+<h3 align='center'>Change Log</h3>
 **1/6/2020** Due to limitations in Nutrinix API. I am going to use an alternative API called Spoonacular. This API will allow me to call objects in a similar way but will include information I need to make my application achieve MVP.
 
 Here is a sample call and response @ the new API.
