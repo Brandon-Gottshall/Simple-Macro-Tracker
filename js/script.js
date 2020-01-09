@@ -67,7 +67,19 @@ const calculate = event => {
     carbGoalHolder = bmr * 0.53
     fatGoalHolder = bmr * 0.25
     proGoalHolder = bmr * 0.22
+    let calc = document.querySelector('#calculator')
+    let sf = document.querySelector('#searchForm')
+    let s = document.querySelector('#search')
+    let t = document.querySelector('#today')
+    let c = document.querySelector('#counter')
+    sf.style.display = 'flex'
+    s.style.display = 'flex'
+    t.style.display = 'flex'
+    c.style.display = 'flex'
+    calc.style.display = 'none'
+    calc.style.margin = 0
     macroCount()
+
 }
 setGoals()
 
@@ -210,13 +222,7 @@ searchForm.addEventListener('submit', function(event) {
                 left.style.width = '20%'
                 left.style.oveflow = 'none'
 
-                    let servingSize = document.createElement('p')
-                    servingSize.style.display = 'flex'
-                    servingSize.style.fontSize = '10px'
-                    servingSize.classList.add = 'servingSize'
-                    servingSize.innerHTML = `Amount per serving: ${serving}`
 
-                left.append(servingSize)
 
 
 
@@ -234,6 +240,7 @@ searchForm.addEventListener('submit', function(event) {
 
                 right = document.createElement('div')
                 right.style.display = 'flex'
+                right.style.justifyContent = 'center'
                 right.style.height = '100%'
                 right.style.width = '60%'
                 right.style.oveflow = 'none'
@@ -249,11 +256,20 @@ searchForm.addEventListener('submit', function(event) {
 
                 rightList = document.createElement('ul')
                 rightList.style.display = 'flex'
+                rightList.style.lineHeight = '20px'
                 rightList.style.margin = '0 auto'
                 rightList.style.alignItems = 'space-between'
                 rightList.style.listStyleType = 'none'
 
+                let servingSize = document.createElement('li')
+                servingSize.style.display = 'flex'
+                servingSize.style.fontSize = '20px'
+                servingSize.style.width = '40px'
+                servingSize.style.margin = 'auto 20px'
+                servingSize.classList.add = 'servingSize'
+                servingSize.innerHTML = `serving ${serving}`
 
+                rightList.append(servingSize)
 
 
 
@@ -272,15 +288,18 @@ searchForm.addEventListener('submit', function(event) {
                     console.log(`${key}: ${value}`)
                     rightListItem = document.createElement('li')
                     rightListItem.style.width = '40px'
-                    rightListItem.style.transform = 'translateY(-30px)'
+                    rightListItem.style.textAlign = 'center'
                     rightListItem.style.paddingRight = '25px'
-                    rightListItem.style.fontSize = '25px'
+                    rightListItem.style.fontSize = '20px'
                     rightListItem.style.color = 'black'
-                    rightListItem.innerHTML = `<p>${key}</p> <p class=${key}>${value}`
+                    rightListItem.style.margin = 'auto 10px'
+                    rightListItem.innerHTML = `<p style='margin: auto 5px'>${key}</p> <p style='margin: auto 5px' class=${key}>${value}`
                     rightList.append(rightListItem)
                 })
                 servingInput = document.createElement('input')
                 servingInput.placeholder = '1'
+                servingInput.style.height = '20px'
+                servingInput.style.margin = 'auto 20px'
                 servingInput.addEventListener('input', inputCalc)
                 right.append(servingInput)
 
