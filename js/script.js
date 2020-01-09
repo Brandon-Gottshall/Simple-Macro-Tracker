@@ -211,6 +211,7 @@ searchForm.addEventListener('submit', function(event) {
                 result = document.createElement('div')
                 result.classList.add('result')
                 result.style.display = 'flex'
+                result.style.margin = 'auto 0'
                 result.style.alignItems = 'center'
                 result.style.borderRadius = '8px'
                 result.style.backgroundColor = 'white'
@@ -254,6 +255,8 @@ searchForm.addEventListener('submit', function(event) {
                 title = document.createElement('p')
                 title.style.margin = '0 auto 5px auto'
                 length = 20
+                title.style.width = '100px'
+                tit
                 trimmedTitle = element.title.substring(0, length);
                 title.innerHTML = trimmedTitle
 
