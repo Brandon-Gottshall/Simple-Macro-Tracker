@@ -264,6 +264,26 @@ searchForm.addEventListener('submit', function(event) {
                 rightList.style.display = 'flex'
                 rightList.style.alignItems = 'center'
                 rightList.style.listStyleType = 'none'
+                
+                servingSize = document.createElement('p')
+                servingSize.display.style = 'flex'
+                servingSize.classList.add = 'servingSize'
+                
+                
+                servingInput = document.createElement('input')
+                
+                
+*/ for remove item
+                rightQuit = document.createElement('div')
+                    // !!!    !!!    !!!    !!!  //
+                    // Create global decleration //
+                rightQuit.style.height = '10px'
+                rightQuit.style.width = '10px'
+                rightQuit.style.borderRadius = '5px'
+                    // May work better at 10px //
+                rightQuit.
+*/
+                
 
                 Object.entries(nutrition).forEach(([key, value]) => {
                     console.log(`${key}: ${value}`)
