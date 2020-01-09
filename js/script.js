@@ -256,7 +256,6 @@ searchForm.addEventListener('submit', function(event) {
                 title.style.margin = '0 auto 5px auto'
                 length = 20
                 title.style.width = '100px'
-                tit
                 trimmedTitle = element.title.substring(0, length);
                 title.innerHTML = trimmedTitle
 
