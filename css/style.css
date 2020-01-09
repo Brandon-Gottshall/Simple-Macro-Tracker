@@ -40,7 +40,7 @@ body {
     height: 400px;
     width: 700px;
     background-color: white;
-    margin-top: 100px;
+    margin: 100px 0;
 }
 #calCount, #carbCount, #fatCount, #proCount {
     display: flex;
@@ -57,11 +57,13 @@ body {
     width: 60%;
     background-color: red;
 }
-#calMarker {
-    margin: 10px 0;
+#calculator {
+    background-color: white;
 }
-#calGoal {
-    margin: 10px 0;
+.HWA {
+    width: 600px;
+    margin: 15px auto;
+    text-align: center;
 }
 #example {
     display: flex;

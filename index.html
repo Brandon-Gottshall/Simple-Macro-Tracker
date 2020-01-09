@@ -51,11 +51,41 @@
                 <p id='proGoal'>150</p>
             </div>
             <span>Amount Consumed | Goal</span>
-            <h3 style='margin: 5px auto'>Pro</h3>
-
-
+            <h3 style='margin: 5px auto'>Protein</h3>
         </div>
+        <div id='calculator'>
+            <form>
+                <h3>Calculate My Goals</h3>
+                <input type="text" name="basic" id="height" placeholder="Height in inches">
+                <input type="text" name="basic" id="weight" placeholder="Weight in lbs">
+                <input type="text" name="basic" id="age" placeholder="Age in years">
+                <br/>
+                <div>
+                <p>Gender</p>
+                <input type="radio" name="gender" value="male" class="gender" checked> Male<br>
+                <input type="radio" name="gender" value="female" class="gender"> Female<br>
+                <input type="radio" name="gender" value="other" class="gender"> Other
+                </div>
+            <br/>
+                <br/>
+                <p>What is your activity level?</p>
+                <input type="radio" name="exercise" value="1.2" class="exercise" checked> Sedentary<br>
+                <input type="radio" name="exercise" value="1.375" class="exercise"> Lightly Active<br>
+                <input type="radio" name="exercise" value="1.55" class="exercise"> Moderatetely Active<br>
+                <input type="radio" name="exercise" value="1.725" class="exercise"> Very Active<br>
+                <input type="radio" name="exercise" value="1.9" class="exercise"> Extra Active<br>
+                <br>
+                <div>
+                    <p>What is your endgoal?</p>
+                    <input type="radio" value="500" class="weightGoal"> Gain Weight<br>
+                    <input type="radio" value="0" class="weightGoal"> Maintain Weight<br>
+                    <input type="radio" value="-500" class="weightGoal"> Lose Weight<br>
+                </div>
+                <br>
+                <button class="submit">Set Goals</button>
 
+            </form>
+        </div>
 
         <script type="text/javascript" src="js/script.js"></script>
     </body>

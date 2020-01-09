@@ -1,5 +1,100 @@
 let results = []
 let cancel = 0
+
+// var rates = document.getElementById('rates').value;
+
+// if (document.getElementById('r1').checked) {
+//   rate_value = document.getElementById('r1').value;
+// }
+let bmr = 0
+let height = 0
+let weight = 0
+let age = 0
+let gender = 0
+let exerciseLevel = 0
+let weightGoal= 0
+let calGoalHolder = 0
+let carbGoalHolder = 0
+let fatGoalHolder = 0
+let proGoalHolder = 0
+
+const setGoals = () => {
+    let submit = document.querySelector('.submit')
+    submit.addEventListener('click', calculate)
+}
+
+const calculate = function(event) {
+    event.preventDefault()
+    height = document.querySelector('#height').value
+    console.log(height);
+    weight = document.querySelector('#weight').value
+    console.log(weight);
+    age = document.querySelector('#age').value
+    console.log(age);
+    gender = document.querySelectorAll('.gender')
+    gender.forEach(element => {(element.checked == true ? gender = element.value : null)})
+    console.log(gender);
+    let weightGoal = document.querySelectorAll('.weightGoal')
+    weightGoal.forEach(element => {(element.checked == true ? weightGoal = element.value : null)})
+    exerciseLevel = document.querySelectorAll('.exercise')
+    exerciseLevel.forEach(element => {(element.checked == true ? exerciseLevel = element.value : null)})
+    // exerciseLevel = parseInt(exerciseLevel)
+    console.log(exerciseLevel);
+    switch (gender) {
+        case 'male':
+            weight *= 6.3
+            console.log(weight);
+            height *= 12.9
+            console.log(height);
+            age *= 6.8
+            console.log(age);
+            bmr = 66 + weight + height - age + weightGoal
+            console.log(bmr);
+            bmr = bmr * exerciseLevel
+            console.log(bmr);
+            calGoalHolder = bmr
+            carbGoalHolder = bmr * 0.53
+            fatGoalHolder = bmr * 0.25
+            proGoalHolder = bmr * 0.22
+            break;
+        case 'female':
+            weight *= 4.3
+            console.log(weight);
+            height *= 4.7
+            console.log(height);
+            age *= 4.7
+            console.log(age);
+            bmr = 655 + weight + height - age + weightGoal
+            console.log(bmr);
+            bmr = bmr * exerciseLevel
+            console.log(bmr);
+            calGoalHolder = bmr
+            carbGoalHolder = bmr * 0.53
+            fatGoalHolder = bmr * 0.25
+            proGoalHolder = bmr * 0.22
+            break;
+        case 'other':
+            weight *= 4.3
+            console.log(weight);
+            height *= 4.7
+            console.log(height);
+            age *= 4.7
+            console.log(age);
+            bmr = 655 + weight + height - age + weightGoal
+            console.log(bmr);
+            bmr = bmr * exerciseLevel
+            console.log(bmr);
+            calGoalHolder = bmr
+            carbGoalHolder = bmr * 0.53
+            fatGoalHolder = bmr * 0.25
+            proGoalHolder = bmr * 0.22
+            break;
+    }
+    console.log(bmr)
+    macroCount()
+}
+setGoals()
+
 const macroCount = function() {
     let calories = 0
     let carbs = 0
@@ -12,28 +107,28 @@ const macroCount = function() {
 
     calProgress = document.querySelector('#calPercent')
     calGoal = document.querySelector('#calGoal')
-    calGoal.innerHTML = 2500
+    calGoal.innerHTML = Math.round(calGoalHolder)
     calPr = (calories / calGoal.innerHTML) * 100
     calProgress.style.width = `${calPr}%`
     calProgress.innerHTML = calories
 
     fatProgress = document.querySelector('#fatPercent')
     fatGoal = document.querySelector('#fatGoal')
-    fatGoal.innerHTML = 250
+    fatGoal.innerHTML = Math.round(fatGoalHolder)
     fatPr = (fat / fatGoal.innerHTML) * 100
     fatProgress.style.width = `${fatPr}%`
     fatProgress.innerHTML = fat
 
     carbProgress = document.querySelector('#carbPercent')
     carbGoal = document.querySelector('#carbGoal')
-    carbGoal.innerHTML = 250
+    carbGoal.innerHTML = Math.round(carbGoalHolder)
     carbPr = (carbs / carbGoal.innerHTML) * 100
     carbProgress.style.width = `${carbPr}%`
     carbProgress.innerHTML = carbs
 
     proProgress = document.querySelector('#proPercent')
     proGoal = document.querySelector('#proGoal')
-    proGoal.innerHTML = 250
+    proGoal.innerHTML = Math.round(proGoalHolder)
     proPr = (protein / proGoal.innerHTML) * 100
     proProgress.style.width = `${proPr}%`
     proProgress.innerHTML = protein
@@ -50,8 +145,13 @@ const local = () => {
         today.innerHTML = localStorage.getItem('today')
         macroCount()
     }
+    if (localStorage.getItem('goals') != null) {
+        
+    }
 }
 local()
+
+
 
 const fetchresults = async (query) => {
     let myHeaders = new Headers();
