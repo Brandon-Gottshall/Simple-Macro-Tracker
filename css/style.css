@@ -69,6 +69,7 @@ body {
 }
 #calculator {
     order: -1;
+    margin-top: 10px;
     background-color: teal;
     width: 80vw;
 }
