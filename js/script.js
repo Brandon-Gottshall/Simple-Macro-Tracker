@@ -17,6 +17,7 @@ let calGoalHolder = 0
 let carbGoalHolder = 0
 let fatGoalHolder = 0
 let proGoalHolder = 0
+let reset = document.querySelector('.reset')
 
 const setGoals = () => {
     let submit = document.querySelector('.submit')
@@ -26,6 +27,14 @@ const inputCalc = (event) => {
     event.preventDefault()
     let
 }
+
+reset.addEventListener('click', function(event) {
+    event.preventDefault()
+    localStorage.setItem('today', '<h3>TODAY</h3>')
+    today = document.querySelector('#today')
+    today.innerHTML = localStorage.getItem('today')
+    macroCount()
+})
 
 const calculate = event => {
     event.preventDefault()
@@ -223,9 +232,6 @@ searchForm.addEventListener('submit', function(event) {
                 left.style.oveflow = 'none'
 
 
-
-
-
                 leftImg = document.createElement('img')
                 leftImg.style.display = 'flex'
                 leftImg.style.borderRadius = '10px'
@@ -246,7 +252,7 @@ searchForm.addEventListener('submit', function(event) {
                 right.style.oveflow = 'none'
 
                 title = document.createElement('p')
-                title.style.margin = '0 auto 20px auto'
+                title.style.margin = '0 auto 5px auto'
                 length = 20
                 trimmedTitle = element.title.substring(0, length);
                 title.innerHTML = trimmedTitle
@@ -264,7 +270,8 @@ searchForm.addEventListener('submit', function(event) {
                 let servingSize = document.createElement('li')
                 servingSize.style.display = 'flex'
                 servingSize.style.fontSize = '20px'
-                servingSize.style.width = '40px'
+                servingSize.style.width = '80px'
+                servingSize.style.paddingLeft = '80px'
                 servingSize.style.margin = 'auto 20px'
                 servingSize.classList.add = 'servingSize'
                 servingSize.innerHTML = `serving ${serving}`
