@@ -22,75 +22,51 @@ const setGoals = () => {
     let submit = document.querySelector('.submit')
     submit.addEventListener('click', calculate)
 }
-
-const calculate = function(event) {
+const inputCalc = (event) => {
     event.preventDefault()
+    let
+}
+
+const calculate = event => {
+    event.preventDefault()
+
     height = document.querySelector('#height').value
-    console.log(height);
     weight = document.querySelector('#weight').value
-    console.log(weight);
     age = document.querySelector('#age').value
-    console.log(age);
+
     gender = document.querySelectorAll('.gender')
     gender.forEach(element => {(element.checked == true ? gender = element.value : null)})
-    console.log(gender);
-    let weightGoal = document.querySelectorAll('.weightGoal')
+
+    weightGoal = document.querySelectorAll('.weightGoal')
     weightGoal.forEach(element => {(element.checked == true ? weightGoal = element.value : null)})
+
     exerciseLevel = document.querySelectorAll('.exercise')
     exerciseLevel.forEach(element => {(element.checked == true ? exerciseLevel = element.value : null)})
-    // exerciseLevel = parseInt(exerciseLevel)
-    console.log(exerciseLevel);
+
     switch (gender) {
         case 'male':
             weight *= 6.3
-            console.log(weight);
             height *= 12.9
-            console.log(height);
             age *= 6.8
-            console.log(age);
-            bmr = 66 + weight + height - age + weightGoal
-            console.log(bmr);
-            bmr = bmr * exerciseLevel
-            console.log(bmr);
-            calGoalHolder = bmr
-            carbGoalHolder = bmr * 0.53
-            fatGoalHolder = bmr * 0.25
-            proGoalHolder = bmr * 0.22
-            break;
+            bmr = (66 + weight + height - age + weightGoal) * exerciseLevel
+            break
         case 'female':
             weight *= 4.3
-            console.log(weight);
             height *= 4.7
-            console.log(height);
             age *= 4.7
-            console.log(age);
-            bmr = 655 + weight + height - age + weightGoal
-            console.log(bmr);
-            bmr = bmr * exerciseLevel
-            console.log(bmr);
-            calGoalHolder = bmr
-            carbGoalHolder = bmr * 0.53
-            fatGoalHolder = bmr * 0.25
-            proGoalHolder = bmr * 0.22
-            break;
+            bmr = (655 + weight + height - age + weightGoal) * exerciseLevel
+            break
         case 'other':
             weight *= 4.3
-            console.log(weight);
             height *= 4.7
-            console.log(height);
             age *= 4.7
-            console.log(age);
-            bmr = 655 + weight + height - age + weightGoal
-            console.log(bmr);
-            bmr = bmr * exerciseLevel
-            console.log(bmr);
-            calGoalHolder = bmr
-            carbGoalHolder = bmr * 0.53
-            fatGoalHolder = bmr * 0.25
-            proGoalHolder = bmr * 0.22
-            break;
+            bmr = (655 + weight + height - age + weightGoal) * exerciseLevel
+            break
     }
-    console.log(bmr)
+    calGoalHolder = bmr
+    carbGoalHolder = bmr * 0.53
+    fatGoalHolder = bmr * 0.25
+    proGoalHolder = bmr * 0.22
     macroCount()
 }
 setGoals()
@@ -146,7 +122,7 @@ const local = () => {
         macroCount()
     }
     if (localStorage.getItem('goals') != null) {
-        
+
     }
 }
 local()
@@ -178,6 +154,7 @@ let fetchId = function(id) {
     .then(response => response.json())
     .then(result => {
         nutrition = result.nutrition
+        serving = result.serving_size
         console.log(result);
         })
     .catch(error => console.log('error', error))
@@ -233,6 +210,16 @@ searchForm.addEventListener('submit', function(event) {
                 left.style.width = '20%'
                 left.style.oveflow = 'none'
 
+                    let servingSize = document.createElement('p')
+                    servingSize.style.display = 'flex'
+                    servingSize.style.fontSize = '10px'
+                    servingSize.classList.add = 'servingSize'
+                    servingSize.innerHTML = `Amount per serving: ${serving}`
+
+                left.append(servingSize)
+
+
+
                 leftImg = document.createElement('img')
                 leftImg.style.display = 'flex'
                 leftImg.style.borderRadius = '10px'
@@ -248,7 +235,7 @@ searchForm.addEventListener('submit', function(event) {
                 right = document.createElement('div')
                 right.style.display = 'flex'
                 right.style.height = '100%'
-                right.style.width = '20%'
+                right.style.width = '60%'
                 right.style.oveflow = 'none'
 
                 title = document.createElement('p')
@@ -262,39 +249,40 @@ searchForm.addEventListener('submit', function(event) {
 
                 rightList = document.createElement('ul')
                 rightList.style.display = 'flex'
-                rightList.style.alignItems = 'center'
+                rightList.style.margin = '0 auto'
+                rightList.style.alignItems = 'space-between'
                 rightList.style.listStyleType = 'none'
-                
-                servingSize = document.createElement('p')
-                servingSize.display.style = 'flex'
-                servingSize.classList.add = 'servingSize'
-                
-                
-                servingInput = document.createElement('input')
-                
-                
-*/ for remove item
-                rightQuit = document.createElement('div')
-                    // !!!    !!!    !!!    !!!  //
-                    // Create global decleration //
-                rightQuit.style.height = '10px'
-                rightQuit.style.width = '10px'
-                rightQuit.style.borderRadius = '5px'
-                    // May work better at 10px //
-                rightQuit.
-*/
-                
+
+
+
+
+
+                // rightQuit = document.createElement('div')
+                //     // !!!    !!!    !!!    !!!  //
+                //     // Create global decleration //
+                // rightQuit.style.height = '10px'
+                // rightQuit.style.width = '10px'
+                // rightQuit.style.borderRadius = '5px'
+                //     // May work better at 10px //
+                // rightQuit.
+
+
 
                 Object.entries(nutrition).forEach(([key, value]) => {
                     console.log(`${key}: ${value}`)
                     rightListItem = document.createElement('li')
-                    rightListItem.style.width = '25px'
-                    rightListItem.style.padding = '0 25px'
+                    rightListItem.style.width = '40px'
+                    rightListItem.style.transform = 'translateY(-30px)'
+                    rightListItem.style.paddingRight = '25px'
                     rightListItem.style.fontSize = '25px'
                     rightListItem.style.color = 'black'
                     rightListItem.innerHTML = `<p>${key}</p> <p class=${key}>${value}`
                     rightList.append(rightListItem)
                 })
+                servingInput = document.createElement('input')
+                servingInput.placeholder = '1'
+                servingInput.addEventListener('input', inputCalc)
+                right.append(servingInput)
 
                 right.append(rightList)
                 item.append(right)

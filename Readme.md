@@ -70,7 +70,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### MVP 
 
 - Search for food item and add it to day.
-- Input field for number of servings.
 - Add together all macro nutrients for day and display them in goal bar.
 - Add together all calories for day and display them in goal bar.
 - Create a calculator to generate goals for user.
@@ -79,6 +78,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Log multiple days to allow user to store their own statistics over time.
 - Show the user a dynamic graph based on their macro intakes.
+- Input field for number of servings.
 - Add support for instant search from the Nutritionix API
 - Drop down to select serving size.
 - *Super Bonus* Create Barcode Scanner
@@ -92,11 +92,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Jan 2rd| Proposal | *Complete*
-|Jan 3rd| Functional search and append | Incomplete
-|Jan 5th| Macros graph elements | Incomplete
-|Jan 6th| Macro Goal Calculator | Incomplete
-|Jan 7th| Create previous days and implement local storage | Incomplete
-|Jan 8th| Styling | Incomplete
+|Jan 3rd| Functional search and append | *Complete*
+|Jan 5th| Macros graph elements | *Complete*
+|Jan 6th| Macro Goal Calculator | *Complete*
+|Jan 7th| Implement local storage & Styling | *Complete*
+|Jan 8th| Post-MVP | Partial
 |Jan 9th| Present | Incomplete
 
 ## Priority Matrix
@@ -108,22 +108,64 @@ Include a full list of features that have been prioritized based on the `Time an
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic Structure | H | 3hrs| 2hrs | 2hrs |
-| Search function | H | 3hrs| 1hrs | 1hrs |
+| Basic Structure | H | 3hrs| 4hrs | 4hrs |
+| Search function | H | 3hrs| 10hrs | 10hrs |
 | Append Item and details | H | 4hrs| 9hrs | 9hrs |
-| Create macro displays | M | 4hrs| 2hrs | 2hrs |
-| Create Calculator | M | 5hrs| 0hrs | 0hrs |
+| Create macro displays | M | 4hrs| 10hrs | 10hrs |
+| Create Calculator | M | 5hrs| 4hrs | 4hrs |
 | Implement Local Storage | L | 5hrs| <1hrs | <1hrs |
 | Add previous days | L | 3hrs| 0hrs | 0hrs |
-| Complete styling | L | 8hrs| 0hrs | 0hrs |
+| Complete styling | L | 8hrs| 2hrs | 2hrs |
 | Barcode scanner | L | 8hrs| 0hrs | 0hrs |
-| Total | H | 43hrs| 0hrs | 0hrs |
+| Total | H | 43hrs| 40hrs | 40hrs |
 
 
 ## Code Snippet
+This function is used to parse
 
 ```
+const calculate = event => {
+    event.preventDefault()
 
+    height = document.querySelector('#height').value
+    weight = document.querySelector('#weight').value
+    age = document.querySelector('#age').value
+
+    gender = document.querySelectorAll('.gender')
+    gender.forEach(element => {(element.checked == true ? gender = element.value : null)})
+
+    weightGoal = document.querySelectorAll('.weightGoal')
+    weightGoal.forEach(element => {(element.checked == true ? weightGoal = element.value : null)})
+
+    exerciseLevel = document.querySelectorAll('.exercise')
+    exerciseLevel.forEach(element => {(element.checked == true ? exerciseLevel = element.value : null)})
+
+    switch (gender) {
+        case 'male':
+            weight *= 6.3
+            height *= 12.9
+            age *= 6.8
+            bmr = (66 + weight + height - age + weightGoal) * exerciseLevel
+            break
+        case 'female':
+            weight *= 4.3
+            height *= 4.7
+            age *= 4.7
+            bmr = (655 + weight + height - age + weightGoal) * exerciseLevel
+            break
+        case 'other':
+            weight *= 4.3
+            height *= 4.7
+            age *= 4.7
+            bmr = (655 + weight + height - age + weightGoal) * exerciseLevel
+            break
+    }
+    calGoalHolder = bmr
+    carbGoalHolder = bmr * 0.53
+    fatGoalHolder = bmr * 0.25
+    proGoalHolder = bmr * 0.22
+    macroCount()
+}
 ```
 
 ## Change Log
