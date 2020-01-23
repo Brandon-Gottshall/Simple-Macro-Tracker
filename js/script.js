@@ -171,7 +171,7 @@ let getSearchBoxValue = function(){
 
 let nutrition = ''
 let fetchId = function(id) {
-    fetch(`https://api.spoonacular.com/food/products/${id}?apiKey=95164448654e40088ff85aef9c22286c`)
+    fetch(`https://api.spoonacular.com/food/products/${id}?apiKey=`)
     .then(response => response.json())
     .then(result => {
         nutrition = result.nutrition
